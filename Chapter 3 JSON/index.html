@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <link rel="stylesheet" href="prism.css">
+    <title>Using JSON Data</title>
+</head>
+<body>
+    <h1>
+        Using the JSON Data
+    </h1>
+    <ul>
+        <li>
+            Websites exchange data in string format or plain text.
+        </li>
+        <li>
+            JSON - javascript object notation
+        </li>
+        <li>
+            In this tutorial JSON.parse is used to convert JSON strings into JS objects.
+        </li>
+        <li>
+            After receiving the data, it is converted to objects.
+        </li>
+        <li>
+            In this tut, we try to access a local file we made with JSON data.
+        </li>
+
+    </ul>
+    <p>Here is the script:</p>
+<pre class="line-numbers">
+    <code class="language-javascript">
+        const getDataBack = (callback) => {
+            const request = new XMLHttpRequest();
+        
+            request.addEventListener("readystatechange", ()=>{
+                // console.log(request, request.readyState);
+                if(request.readyState === 4 && request.status === 200){
+                    const data = JSON.parse(request.responseText);
+                    callback(undefined, data);
+                }
+                else if(request.readyState === 4 && request.status === 404){
+                    callback("Could not fetch data", "undefined");
+                }
+            });
+        
+            request.open("GET", "data.json");
+            request.send();
+            
+        };
+        
+        console.log(1);
+        console.log(2);
+        
+        getDataBack((err, data) => {
+            console.log("Callback fired");
+        
+            if(err){
+                console.log(err);
+            }else{
+                console.log(data);
+            }
+        });
+        
+        console.log(3);
+        console.log(4);        
+    </code>
+</pre>
+    
+
+    <script src="script.js"></script>
+    <script src="prism.js"></script>
+    
+</body>
+</html>

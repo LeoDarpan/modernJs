@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS</title>
+</head>
+<body>
+    <h1>
+        A very simple example of Async JS
+    </h1>
+    <p>
+        <ul>
+            <li>
+                Async JS doesn't stop the execution of the statements if there is a statement which is time consuming. 
+            </li>
+            <li>
+                Instead it keeps executing that statement out of the normal flow
+            </li>
+            <li>
+                It keeps executing the statements in the flow
+            </li>
+            <li>
+                It calls back a funciton when that time eating statement finishes its process.
+            </li>
+            <li>
+                Best example is setTimeOut function of JS. It calls a function back after the specified time without stopping the next instructions in sequence of the code
+            </li>
+            <li>
+                See the console
+            </li>
+            <li>
+                The call back function is invoked after the specified time and the rest of the statements are not stopped from execution before that.
+            </li>
+            <li>
+                setTimeout is the simplest example to understand ASYNC javascript
+            </li>
+            <li>
+                Next up with HTTP requests. The real scenario
+            </li>
+        </ul>      
+    </p>
+
+    <script type="text/javascript">
+        console.log(1);
+        console.log(2);
+        setTimeout(() => {
+            console.log("Callback funciton invoked");
+        }, 3000);
+        console.log(3);
+        console.log(4);
+    </script>
+</body>
+</html>

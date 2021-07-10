@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=100, initial-scale=1.0">
+        <link rel="stylesheet" href="prism.css">
+        <title>Throwing Errors</title>
+    </head>
+    <body>
+        <h1>
+            Throwing errors to Fetch API
+        </h1>
+        <ul>
+            <li>
+                We can throw our own custom error messages also.
+            </li>
+            <li>
+                Whenever the main promise of fetching the data is rejected, it generates an error message which is quite technical.
+            </li>
+            <li>
+                The code for success is 200, so any other code means the data was not fetched.
+            </li>
+            <li>
+                This can be used as a condition to generate a custom error message just after the fetch promise awaiting statement as shown.
+            </li>
+            <li style="font-weight: bold; color: yellow; background-color: black; padding: 5px 10px; ">
+                The placement of the new Error method matters a lot, it should be exactly below the promise awaiting statement.
+            </li>
+        </li>
+        </ul>
+        <p>Here is the script:</p>
+    <pre class="line-numbers">
+        <code class="language-javascript">
+            const getData = async () => {
+    
+                const response = await fetch("data/game-movies.json");
+                
+                if(response.status !== 200){
+                    throw new Error("Cannot fetch the data");
+                }
+            
+                const data = await response.json();
+            
+                return data;
+            };
+            
+            getData()
+                .then((data) => console.log("Resolved:", data))
+                .catch((err) => console.log("Rejected:", err.message));             
+        </code>
+    </pre>
+        
+
+        <script src="script.js"></script>
+        <script src="prism.js"></script>
+        
+    </body>
+</html>

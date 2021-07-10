@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <link rel="stylesheet" href="prism.css">
+    <title>Async and Await</title>
+</head>
+<body>
+    <h1>
+        Async and await
+    </h1>
+    <ul>
+       <li>
+           This concept lets the promises chain together in a much more compact and clean way.
+       </li>
+       <li>
+           Async keyword makes a function asynchronous which always returns a promise.
+       </li>
+       <li>
+           Await removes the need to write the then and catch statements and use callback functions to get the data.
+       </li>
+       <li>
+           Await returns the result of promise.
+       </li>
+       <li>
+           This further boils down the code to just two lines as can be seen.
+       </li>
+       <li>
+           However, the call to the async function returns a promise so a then and catch method needs to be associated with the call to the funciton.
+       </li>
+
+    </ul>
+    <p>Here is the script:</p>
+<pre class="line-numbers">
+    <code class="language-javascript">
+        const getData = async () => {
+    
+            const response = await fetch("data/game-movies.json");
+            const data = await response.json();
+            
+            return data;
+        };
+        
+        getData()
+            .then((data) => console.log("resolved:", data));
+        
+        
+               
+    </code>
+</pre>
+    
+
+    <script src="script.js"></script>
+    <script src="prism.js"></script>
+    
+</body>
+</html>

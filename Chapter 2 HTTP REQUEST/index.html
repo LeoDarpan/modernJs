@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <link rel="stylesheet" href="prism.css">
+    <title>HTTP Requests</title>
+</head>
+<body>
+    <h1>
+        ASYNC JS with HTTP Requests
+    </h1>
+    <ul>
+        <li>
+            In this, XMLHTTPREQUEST is used, a new function.
+        </li>
+        <li>
+            Data is fetched using GET method, from a remote source
+        </li>
+        <li>
+            Also tells about status codes for the various types of responses, 200 for success and getting data and 404 for bad url.
+        </li>
+        <li>
+            Not only the readyState should be checked while fetching data from remote servers, but also the status codes should be checked and action should be taken accordingly.
+        </li>
+        <li>
+            See the script below.
+        </li>
+
+        <li style="font-weight: 500; color: white; background-color: black; padding: 10px;">
+            In this tut I also learnt about adding code snippets on the page in the correct manner, using pre and code tags and external library called prism to decorate the way it is rendered on the page.
+        </li>
+        <li>
+            After dealing with the codes, the next thing to do is to make a call back function which could specify the reaction after getting the data.   
+        </li>
+        <li>
+            The call back function is passed as a parameter while defining the function and it is invoked everytime the main function is called.
+        </li>
+        <li>
+            So, how does it show the ASYNC behavior? By adding the console commands and by putting the call to the HTTPRequest function in the middle.
+        </li>
+        <li>
+            The callback function is invoked after the console.log command number 4, which shows that it doesn't stop the execution of the other statements.
+        </li>
+    </ul>
+    <p>Here is the script:</p>
+<pre class="line-numbers">
+    <code class="language-javascript">
+        const getDataBack = (callback) => {
+            const request = new XMLHttpRequest();
+        
+            request.addEventListener("readystatechange", ()=>{
+                // console.log(request, request.readyState);
+                if(request.readyState === 4 && request.status === 200){
+                    callback(undefined, request.responseText);
+                }
+                else if(request.readyState === 4 && request.status === 404){
+                    callback("Could not fetch data", "undefined");
+                }
+            });
+        
+            request.open("GET", "https://jsonplaceholder.typicode.com/todos/");
+            request.send();
+            
+        };
+        
+        console.log(1);
+        console.log(2);
+        
+        getDataBack((err, data) => {
+            console.log("Callback fired");
+        
+            if(err){
+                console.log(err);
+            }else{
+                console.log(data);
+            }
+        });
+        
+        console.log(3);
+        console.log(4);
+        
+    </code>
+</pre>
+    
+
+    <script src="script.js"></script>
+    <script src="prism.js"></script>
+    
+</body>
+</html>

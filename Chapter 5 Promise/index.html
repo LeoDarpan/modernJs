@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=100, initial-scale=1.0">
+    <link rel="stylesheet" href="prism.css">
+    <title>Promises</title>
+</head>
+<body>
+    <h1>
+        Callback Promises
+    </h1>
+    <ul>
+       <li>
+           Promise returns two things, either 'resolve' that is success or 'reject' that is error.
+       </li> 
+       <li>
+           The example in the script below shows a boiler template of Promise.
+       </li>
+       <li>
+           Now, the same concept can be used in the main task of fetching data to avoid nesting of callbacks.
+       </li>
+       <li>
+           Resolve runs when data is fetched and shows the message being passed as resolve.
+       </li>
+       <li>
+           On the other hand, rejected shows the error message when the data fetching failed.
+       </li>
+    </ul>
+    <p>Here is the script:</p>
+<pre class="line-numbers">
+    <code class="language-javascript">
+        const getDataBack = (resource) => {
+            return new Promise((resolve, reject) => {
+                const request = new XMLHttpRequest();
+        
+                request.addEventListener("readystatechange", ()=>{
+                    // console.log(request, request.readyState);
+                    if(request.readyState === 4 && request.status === 200){
+                        const data = JSON.parse(request.responseText);
+                        resolve(data);
+                    }
+                    else if(request.readyState === 4 && request.status === 404){
+                        reject("Error getting data");
+                    }
+                });
+        
+                request.open("GET", resource);
+                request.send();
+        
+            });    
+        };
+        
+        getDataBack("data/favorite-games.json").then((data) => {
+            console.log("Promise resolved:", data);
+        }).catch((err) => {
+            console.log("Promise rejected:", err);
+        });
+        
+        // -------------Promise example---------------
+        // const getSomething = () => {
+        //     return new Promise((resolve, reject) => {
+        //         //fetch something
+        //         resolve("some data");
+        
+        //         //if there is error
+        //         reject("some error");
+        //     });
+        
+        // }
+        
+        // getSomething().then((data) => {
+        //     console.log(data);
+        // }).catch((err) => {
+        //     console.log(err);
+        // });
+        
+         
+    </code>
+</pre>
+    
+
+    <script src="script.js"></script>
+    <script src="prism.js"></script>
+    
+</body>
+</html>
