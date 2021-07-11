@@ -45,4 +45,35 @@ body {
     font-size: 1rem;
   }
 }
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  font-size: 2rem;
+  background-color: #dc143c;
+  border-radius: 25px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  footer a {
+    font-size: 1.25rem;
+  }
+}
+
+footer a:hover {
+  color: black;
+  background-color: white;
+}
 /*# sourceMappingURL=style.css.map */

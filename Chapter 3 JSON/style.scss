@@ -37,3 +37,23 @@ body{
         font-size: 1rem;
     }
 }
+footer{
+    display: flex;
+    justify-content: space-between;
+    a{
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        font-size: 2rem;
+        background-color: #dc143c;
+        border-radius: 25px;
+        transition: all .2s ease-in-out;
+        @media (max-width: 768px) {
+            font-size: 1.25rem;
+        }
+    }
+    a:hover{
+        color: black;
+        background-color: white;
+    }
+}
