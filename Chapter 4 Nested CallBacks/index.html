@@ -4,36 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=100, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="prism.css">
     <title>Callback Hell</title>
 </head>
 <body>
-    <h1>
-        Getting JSON data from various sources
-    </h1>
-    <ul>
-        <li>
-            In this tut, I fetch data from various files one by one.
-        </li>
-        <li>
-            One by one, we request data from files(APIs) and display on the browser.
-        </li>
-        <li>
-            I learn how to know when one request is done and time to do the next.
-        </li>
-        <li>
-            I also learn how to re-use the same function for different APIs.
-        </li>
-        <li>
-            when data from one call back function is received, the second callback function is called in that.             
-        </li>
-        <li>
-            Nesting of callback functions ensures that the data is received successfully only then the next call is made to get the data.
-        </li>
-        <li>
-            However, this makes the code messy and to make it easier, a function called Promise is made.
-        </li>
-    </ul>
+    <section class="container">
+        <h1>
+            Getting JSON data from various sources
+        </h1>
+        <ul>
+            <li>
+                In this tut, I fetch data from various files one by one.
+            </li>
+            <li>
+                One by one, we request data from files(APIs) and display on the browser.
+            </li>
+            <li>
+                I learn how to know when one request is done and time to do the next.
+            </li>
+            <li>
+                I also learn how to re-use the same function for different APIs.
+            </li>
+            <li>
+                when data from one call back function is received, the second callback function is called in that.             
+            </li>
+            <li>
+                Nesting of callback functions ensures that the data is received successfully only then the next call is made to get the data.
+            </li>
+            <li>
+                However, this makes the code messy and to make it easier, a function called Promise is made.
+            </li>
+        </ul>
+    </section>
+    
     <p>Here is the script:</p>
 <pre class="line-numbers">
     <code class="language-javascript">

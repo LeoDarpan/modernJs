@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=100, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="prism.css">
     <title>Chaining Promises</title>
 </head>
 <body>
-    <h1>
-        Chaining Promises
-    </h1>
-    <ul>
-       <li>
-           Chaining is necessary when multiple data resources are going to provide data.
-       </li>
-       <li>
-           It is very clean using promises. When a promise is fulfilled, 'then' method is invoked, this is where the next promise can be committed.
-       </li>
-       <li>
-           As many promises can be called upon as required, the good thing is, only one 'catch' method is needed to display error wherever it is.
-       </li>
-       <li>
-           Catch is fired at the failure of any or every of all the promises chained together.
-       </li>
-    </ul>
+    <section class="container">
+        <h1>
+            Chaining Promises
+        </h1>
+        <ul>
+            <li>
+                Chaining is necessary when multiple data resources are going to provide data.
+            </li>
+            <li>
+                It is very clean using promises. When a promise is fulfilled, 'then' method is invoked, this is where the next promise can be committed.
+            </li>
+            <li>
+                As many promises can be called upon as required, the good thing is, only one 'catch' method is needed to display error wherever it is.
+            </li>
+            <li>
+                Catch is fired at the failure of any or every of all the promises chained together.
+            </li>
+        </ul>
+    </section>
     <p>Here is the script:</p>
 <pre class="line-numbers">
     <code class="language-javascript">
