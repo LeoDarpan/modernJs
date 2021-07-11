@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+ul li{
+    list-style-type: none;
+    a{
+        text-decoration: none;
+    }
+}
+
+
+header{
+    width: 20%;
+    height: 100%;
+    background-color: black;
+    color: gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    h1{
+        text-orientation: upright;
+        writing-mode: vertical-lr;
+        font-style: italic;
+        font-size: 2rem;
+        @media(max-width: 1092px){
+            font-size: 1.7rem;
+        }
+        @media(max-width: 400px){
+            font-size: 1.5rem;
+            text-orientation: unset;
+            writing-mode: unset;
+        }
+    }
+    @media (max-width: 400px) {
+        clear: both;
+        width: 100%;
+        height: auto;
+        
+    }
+}
+
+.main{
+    float: left;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0px 20px 40px;
+    background-color: crimson;
+    border: 1px solid green;
+    .chapters{
+        ul{
+            li{
+                padding: 5px 25px 0px;
+                
+                font-style: italic;
+                font-size: 2rem;
+                overflow: hidden;
+                height: 50px;
+                width: 33%;
+                border-radius: 25px;
+                background-color: black;
+                margin: 15px 0px;
+                transition: all 0.3s ease-in-out;
+                
+                a{  
+                    display: block;
+                    width: 500px;
+                    color: white;
+                    @media (max-width: 768px) {
+                        width: 240px;
+                        font-size: 1rem;
+                    }
+                }
+                @media(max-width: 768px){
+                    height: 35px;
+                    overflow: hidden;
+                    width: 35%;
+                    padding: 5px 5px 5px 15px;
+                }
+
+            }
+            li:hover{
+                width: 100%;
+            }
+            li:hover a{
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+            }
+
+        }
+    }
+    @media (max-width:400px) {
+        height: 100%;
+        clear: both;
+        width: 100%;
+        justify-content: center;
+        padding-left: 10px;
+    }
+}
+
+
+

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+.container{
+    width: 100%;
+    padding: 20px 40px;
+    color: #aF00FF;
+    font-size: 2rem;
+    h1{
+        text-align: center;   
+        transition: all 0.4s ease-in-out;
+    }
+    h1::before{
+        content: '';
+        display: block;
+        width: 40%;
+        height: 5px;
+        background-color: gold;
+        margin: 0 auto;
+    }
+    h1::after{
+        content: '';
+        display: block;
+        width: 40%;
+        height: 5px;
+        background-color: gold;
+        margin: 5px auto 0px;
+    }
+    @media (max-width: 768px){
+        font-size: 1rem;
+    }
+}

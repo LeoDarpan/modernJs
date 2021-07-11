@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+header {
+  width: 20%;
+  height: 100%;
+  background-color: black;
+  color: gold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  float: left;
+}
+
+header h1 {
+  text-orientation: upright;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+@media (max-width: 1092px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 1.5rem;
+    text-orientation: unset;
+    -webkit-writing-mode: unset;
+        -ms-writing-mode: unset;
+            writing-mode: unset;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    clear: both;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.main {
+  float: left;
+  width: 80%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0px 20px 40px;
+  background-color: crimson;
+  border: 1px solid green;
+}
+
+.main .chapters ul li {
+  padding: 5px 25px 0px;
+  font-style: italic;
+  font-size: 2rem;
+  overflow: hidden;
+  height: 50px;
+  width: 33%;
+  border-radius: 25px;
+  background-color: black;
+  margin: 15px 0px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.main .chapters ul li a {
+  display: block;
+  width: 500px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .main .chapters ul li a {
+    width: 240px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main .chapters ul li {
+    height: 35px;
+    overflow: hidden;
+    width: 35%;
+    padding: 5px 5px 5px 15px;
+  }
+}
+
+.main .chapters ul li:hover {
+  width: 100%;
+}
+
+.main .chapters ul li:hover a {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+@media (max-width: 400px) {
+  .main {
+    height: 100%;
+    clear: both;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-left: 10px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
