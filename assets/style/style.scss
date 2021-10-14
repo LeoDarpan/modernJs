@@ -14,8 +14,6 @@ ul li{
         text-decoration: none;
     }
 }
-
-
 header{
     width: 20%;
     height: 100%;
@@ -46,7 +44,6 @@ header{
         
     }
 }
-
 .main{
     float: left;
     width: 80%;
@@ -61,7 +58,6 @@ header{
         ul{
             li{
                 padding: 5px 25px 0px;
-                
                 font-style: italic;
                 font-size: 2rem;
                 overflow: hidden;
@@ -106,6 +102,35 @@ header{
         justify-content: center;
         padding-left: 10px;
     }
+}
+.home{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: black;
+    border-radius: 25px;
+    padding-inline: 20px;
+    padding-block: 5px;
+    .home__button{
+        width: 50px;
+        overflow: hidden;
+        height: 50px;
+        transition: .2s all ease-in-out;
+        text-align: center;
+        a{
+            text-decoration: none;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 3vw;
+            color: white;
+        }
+    }
+}
+.home:hover .home__button{
+    width: 350px;
+}
+.home:hover .home__button{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 
